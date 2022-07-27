@@ -20,18 +20,19 @@
       android:layout_alignParentLeft="true"
       android:layout_alignParentStart="true"
       android:gravity="center" />
+
   <EditText
+      android:id="@+id/editName"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="textPersonName"
-      android:ems="10"
-      android:id="@+id/editName"
-      android:textStyle="bold|italic"
       android:layout_below="@+id/textView"
-      android:layout_alignParentRight="true"
       android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:ems="10"
+      android:gravity="center_vertical|center"
       android:hint="Enter Name"
-      android:gravity="center_vertical|center" />
+      android:inputType="textPersonName"
+      android:textStyle="bold|italic" />
   <TextView
       android:text="Password"
       android:layout_width="match_parent"
@@ -45,20 +46,21 @@
       android:layout_alignParentEnd="true"
       android:gravity="center"
       android:hint="Enter Password" />
+
   <EditText
+      android:id="@+id/editPass"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="textPassword"
-      android:ems="10"
-      android:layout_marginTop="11dp"
-      android:id="@+id/editPass"
-      android:hint="Enter Password"
-      android:gravity="center_vertical|center"
-      android:textSize="18sp"
       android:layout_below="@+id/textView2"
-      android:layout_alignParentLeft="true"
       android:layout_alignParentStart="true"
+      android:layout_alignParentLeft="true"
+      android:layout_marginTop="11dp"
+      android:ems="10"
+      android:gravity="center_vertical|center"
+      android:hint="Enter Password"
+      android:inputType="textPassword"
       android:textAllCaps="false"
+      android:textSize="18sp"
       android:textStyle="normal|bold" />
 
   <TextView android:id="@+id/Textusertype"
@@ -89,7 +91,7 @@
           android:text="User" />
 
       <RadioButton
-          android:id="@+id/grad1"
+          android:id="@+id/adminradiobtn"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_toRightOf="@+id/adminradiobtn"
@@ -140,13 +142,13 @@
       android:layout_alignTop="@+id/button4"
       android:layout_alignParentStart="true"
       android:layout_toStartOf="@+id/button2"
+      android:background="@drawable/input_design"
       android:ems="10"
       android:freezesText="false"
-      android:textColorHint="@color/neonyellow"
       android:hint="Enter Name to Delete Data"
-      android:background="@drawable/input_design"
       android:inputType="textPersonName"
-      android:padding="5dp" />
+      android:padding="5dp"
+      android:textColorHint="@color/neonyellow" />
 
   <Button
       android:id="@+id/button4"
@@ -176,8 +178,8 @@
       android:hint="Current Name"
       android:inputType="textPersonName"
       android:padding="5dp"
-      android:textSize="14sp"
       android:textColorHint="@color/neonyellow"
+      android:textSize="14sp"
       android:textStyle="bold|italic" />
 
   <EditText
@@ -196,7 +198,7 @@
       android:textStyle="bold|italic" />
 
   <EditText
-      android:id="@+id/edittext7"
+      android:id="@+id/editText7"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@+id/editText5"
@@ -205,8 +207,8 @@
       android:hint="New Password"
       android:inputType="textPersonName"
       android:padding="5dp"
-      android:textSize="14sp"
       android:textColorHint="@color/neonyellow"
+      android:textSize="14sp"
       android:textStyle="bold|italic" />
 
 
@@ -223,6 +225,22 @@
       android:textColor="@color/black"
       android:backgroundTint="@color/neon"
       android:textStyle="normal|bold" />
+
+  <Button
+      android:id="@+id/DeleteBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/editText6"
+      android:layout_below="@+id/editText7"
+      android:layout_alignStart="@+id/button4"
+      android:layout_alignLeft="@+id/button4"
+      android:layout_marginTop="100dp"
+      android:backgroundTint="@color/neon"
+      android:onClick="deleteAll"
+      android:text="DELETE ALL"
+      android:textColor="@color/black"
+      android:textStyle="normal|bold" />
+
 
 </RelativeLayout>
 

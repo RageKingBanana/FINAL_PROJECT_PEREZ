@@ -172,5 +172,14 @@ public class MyDbAdapter {
         return null;
     }
 
+    public Integer deleteAllData()
+    {
+        SQLiteDatabase db = myhelper.getWritableDatabase();
+        return db.delete(myDbHelper.TABLE_NAME, null, null);
+    }
+
+
+
+
 }
 

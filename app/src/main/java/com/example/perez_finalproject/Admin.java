@@ -3,17 +3,20 @@ package com.example.perez_finalproject;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
-public class Admin extends AppCompatActivity {
+public class Admin extends AppCompatActivity  {
 
     EditText Name, Pass, Delete, CurrName, NewName, NewPass;
     MyDbAdapter helper;
     RadioGroup Usertype;
     RadioButton UserRdBtn, AdminRdBtn;
+    Button deletebtn;
 
     public static boolean SuperAdminACC;
 
@@ -26,11 +29,12 @@ public class Admin extends AppCompatActivity {
         Delete = (EditText) findViewById(R.id.editText6);
         CurrName = (EditText) findViewById(R.id.editText3);
         NewName = (EditText) findViewById(R.id.editText5);
-
+        NewPass = (EditText) findViewById(R.id.editText7);
         Usertype = (RadioGroup) findViewById(R.id.radiogroup1);
         UserRdBtn = (RadioButton) findViewById(R.id.userradiobtn);
         UserRdBtn.setChecked(true);
         AdminRdBtn = (RadioButton) findViewById(R.id.adminradiobtn);
+        deletebtn = (Button) findViewById(R.id.DeleteBtn);
 
 
         helper = new MyDbAdapter(this);
@@ -140,4 +144,20 @@ public class Admin extends AppCompatActivity {
             }
         }
     }
+
+    public void deleteAll(View view)
+    {
+
+                Integer var = helper.deleteAllData();
+                if(var > 0)
+                {
+                    Toast.makeText(Admin.this,"Data has been deleted",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(Admin.this, "Deletion Error", Toast.LENGTH_SHORT).show();
+                }
+    }
+
+
 }
