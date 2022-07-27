@@ -174,8 +174,14 @@ public class MyDbAdapter {
 
     public Integer deleteAllData()
     {
+        Integer retVal = 0;
+        String[] whereArgs= {"ADMIN"};
         SQLiteDatabase db = myhelper.getWritableDatabase();
-        return db.delete(myDbHelper.TABLE_NAME, null, null);
+        db.delete(myDbHelper.TABLE_NAME, myDbHelper.USERTYPE+" = ?", whereArgs);
+        whereArgs = new String[]{"USER"};
+        retVal = db.delete(myDbHelper.TABLE_NAME, myDbHelper.USERTYPE+" = ?", whereArgs);
+
+        return retVal;
     }
 
 
