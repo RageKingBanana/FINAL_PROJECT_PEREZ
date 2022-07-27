@@ -42,6 +42,7 @@ public class Admin extends AppCompatActivity  {
         if(!SuperAdminACC)
         {
             AdminRdBtn.setVisibility(View.GONE);
+            deletebtn.setVisibility(View.GONE);
         }
     }
     public void addUser(View view)
