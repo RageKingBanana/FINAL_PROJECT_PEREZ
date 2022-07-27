@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rift"
+    tools:context=".Admin">
+
+  <TextView
+      android:text="Username"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:layout_marginTop="12dp"
+      android:id="@+id/textView"
+      android:textSize="18sp"
+      android:textStyle="bold|italic"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:gravity="center" />
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="textPersonName"
+      android:ems="10"
+      android:id="@+id/editName"
+      android:textStyle="bold|italic"
+      android:layout_below="@+id/textView"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentEnd="true"
+      android:hint="Enter Name"
+      android:gravity="center_vertical|center" />
+  <TextView
+      android:text="Password"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="13dp"
+      android:id="@+id/textView2"
+      android:textStyle="bold|italic"
+      android:textSize="18sp"
+      android:layout_below="@+id/editName"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentEnd="true"
+      android:gravity="center"
+      android:hint="Enter Password" />
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="textPassword"
+      android:ems="10"
+      android:layout_marginTop="11dp"
+      android:id="@+id/editPass"
+      android:hint="Enter Password"
+      android:gravity="center_vertical|center"
+      android:textSize="18sp"
+      android:layout_below="@+id/textView2"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:textAllCaps="false"
+      android:textStyle="normal|bold" />
+
+  <TextView android:id="@+id/Textusertype"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="165dp"
+      android:layout_gravity="center"
+      android:text="USER TYPE"
+      android:textColor="@color/black"
+      android:layout_below="@id/editPass"
+      />
+
+  <RelativeLayout android:id="@+id/linearradio" android:layout_below="@+id/Textusertype" android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:id="@+id/radiogroup1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+      <RadioButton
+          android:id="@+id/userradiobtn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="50dp"
+          android:buttonTint="@color/neon"
+          android:text="User" />
+
+      <RadioButton
+          android:id="@+id/grad1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/adminradiobtn"
+          android:buttonTint="@color/neon"
+          android:text="Admin" />
+
+    </RadioGroup>
+
+  </RelativeLayout>
+
+  <Button
+      android:id="@+id/button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/linearradio"
+      android:layout_alignParentLeft="true"
+      android:layout_marginStart="28dp"
+      android:textColor="@color/black"
+      android:backgroundTint="@color/transparent"
+      android:layout_marginTop="23dp"
+      android:onClick="addUser"
+      android:text="Add User"
+      android:textSize="18sp"
+      android:textStyle="bold|italic" />
+
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/editPass"
+      android:layout_alignBaseline="@+id/button"
+      android:layout_alignBottom="@+id/button"
+      android:layout_alignParentRight="true"
+      android:layout_marginTop="24dp"
+      android:layout_marginRight="33dp"
+      android:layout_marginBottom="-1dp"
+      android:onClick="viewdata"
+      android:text="View Data"
+      android:textSize="18sp"
+      android:textColor="@color/black"
+      android:backgroundTint="@color/transparent"
+      android:textStyle="bold|italic" />
+
+  <EditText
+      android:id="@+id/editText6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@+id/button4"
+      android:layout_alignParentStart="true"
+      android:layout_toStartOf="@+id/button2"
+      android:ems="10"
+      android:freezesText="false"
+      android:textColorHint="@color/neonyellow"
+      android:hint="Enter Name to Delete Data"
+      android:background="@drawable/input_design"
+      android:inputType="textPersonName"
+      android:padding="5dp" />
+
+  <Button
+      android:id="@+id/button4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginEnd="21dp"
+      android:layout_marginBottom="41dp"
+      android:onClick="delete"
+      android:text="Delete"
+      android:textStyle="normal|bold"
+      android:textColor="@color/black"
+      android:backgroundTint="@color/neon"
+      tools:ignore="RelativeOverlap" />
+
+  <EditText
+      android:id="@+id/editText3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/button"
+      android:layout_alignParentStart="true"
+      android:layout_marginStart="7dp"
+      android:layout_marginTop="47dp"
+      android:background="@drawable/input_design"
+      android:ems="10"
+      android:hint="Current Name"
+      android:inputType="textPersonName"
+      android:padding="5dp"
+      android:textSize="14sp"
+      android:textColorHint="@color/neonyellow"
+      android:textStyle="bold|italic" />
+
+  <EditText
+      android:id="@+id/editText5"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignStart="@+id/editText3"
+      android:layout_alignTop="@+id/button3"
+      android:background="@drawable/input_design"
+      android:ems="10"
+      android:hint="New Name"
+      android:inputType="textPersonName"
+      android:padding="5dp"
+      android:textColorHint="@color/neonyellow"
+      android:textSize="14sp"
+      android:textStyle="bold|italic" />
+
+  <EditText
+      android:id="@+id/edittext7"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/editText5"
+      android:layout_alignStart="@+id/editText3"
+      android:background="@drawable/input_design"
+      android:hint="New Password"
+      android:inputType="textPersonName"
+      android:padding="5dp"
+      android:textSize="14sp"
+      android:textColorHint="@color/neonyellow"
+      android:textStyle="bold|italic" />
+
+
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/editText3"
+      android:layout_alignStart="@+id/button4"
+      android:layout_alignLeft="@+id/button4"
+      android:layout_marginTop="13dp"
+      android:onClick="update"
+      android:text="Update"
+      android:textColor="@color/black"
+      android:backgroundTint="@color/neon"
+      android:textStyle="normal|bold" />
+
+</RelativeLayout>
+
+
