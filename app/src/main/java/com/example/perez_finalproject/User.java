@@ -18,10 +18,11 @@ public class User extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
         UserNameText = (TextView) findViewById(R.id.usernamedisplay);
-        UserNameText.setText("Welcome! : " + Username);
+        UserNameText.setText("Welcome User!  " + "\n" +Username);
     }
 
-    public void close(View view) {
+    public void close(View view)
+    {
         finish();
     }
 }

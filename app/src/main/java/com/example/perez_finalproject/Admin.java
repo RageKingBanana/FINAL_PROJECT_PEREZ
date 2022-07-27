@@ -159,5 +159,10 @@ public class Admin extends AppCompatActivity  {
                 }
     }
 
+    public void close(View view)
+    {
+        finish();
+    }
+
 
 }

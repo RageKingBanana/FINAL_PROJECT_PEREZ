@@ -115,7 +115,7 @@ public class MyDbAdapter {
     public void createSuperAdminAcc()
     {
         insertData("admin", "admin", "SUPERADMIN");
-        insertData("admintest", "admintest", "ADMIN");
+        insertData("Ricky", "12345", "ADMIN");
     }
 
     public boolean IsUserExists(String Name)
