@@ -69,7 +69,11 @@ public class MyDbAdapter {
         contentValues.put(myDbHelper.NAME, name);
         contentValues.put(myDbHelper.MyPASSWORD, pass);
         contentValues.put(myDbHelper.USERTYPE, usertype);
-        long id = dbb.insert(myDbHelper.TABLE_NAME, null , contentValues);
+        long id = -1;
+
+        if(!IsUserExists(name)){
+            id = dbb.insert(myDbHelper.TABLE_NAME, null , contentValues);
+        }
         return id;
     }
 
@@ -112,6 +116,25 @@ public class MyDbAdapter {
     {
         insertData("admin", "admin", "SUPERADMIN");
         insertData("admintest", "admintest", "ADMIN");
+    }
+
+    public boolean IsUserExists(String Name)
+    {
+        SQLiteDatabase db = myhelper.getWritableDatabase();
+        String[] columns = {myDbHelper.UID,myDbHelper.NAME,myDbHelper.MyPASSWORD, myDbHelper.USERTYPE};
+        Cursor cursor =db.query(myDbHelper.TABLE_NAME,columns,null,null,null,null,null);
+        while (cursor.moveToNext())   {
+            @SuppressLint("Range") int cid =cursor.getInt(cursor.getColumnIndex(myDbHelper.UID));
+            @SuppressLint("Range") String name =cursor.getString(cursor.getColumnIndex(myDbHelper.NAME));
+            @SuppressLint("Range") String  password 		=cursor.getString(cursor.getColumnIndex(myDbHelper.MyPASSWORD));
+            @SuppressLint("Range") String  usertype 		=cursor.getString(cursor.getColumnIndex(myDbHelper.USERTYPE));
+
+            if(name.equals(Name))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean CheckerLogIn(String NameLog, String PassLog)
